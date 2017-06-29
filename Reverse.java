@@ -6,7 +6,6 @@ public class Reverse {
 
 	public static void main(String[] args) {
 		int rev=0,num=6758;
-		System.out.println("Enter the number:");
 	 Scanner s=new Scanner(System.in);
 	 while(num!=0){
 		 rev=(rev*10)+(num%10);
