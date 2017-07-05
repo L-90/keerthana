@@ -15,7 +15,7 @@ public class Lngstprefix {
    for(int i=0;i<n;i++){
 	   int b=(int)c[i];
 	   if(b==97){
-		   System.out.println("x");
+		   System.out.println("z");
 	   }else{
 		   System.out.println((char)b);
 		   s.close();
