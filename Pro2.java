@@ -1,38 +1,42 @@
-package guvi;
+package gvi;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Pro2 {
 	public static void main(String[] args){
+		int k;
+		int number;
 		Scanner s=new Scanner(System.in);
-		int n=s.nextInt();
-		int n1=n/2;
-		int i;
-		int[] a=new int[n];
-		for(i=0;i<n;i++){
-			a[i]=s.nextInt();
+		try{
+			System.out.println("Enter the digits to be removed ");
+			k=s.nextInt();
+			System.out.println("Enetr the number:");
+			number=s.nextInt();
+			String str=""+number;
+			if(k<str.length()&&k>0){
+				char[] numberArray=str.toCharArray();
+				Arrays.sort(numberArray);
+			str =" ";
+          for(int i=0;i<numberArray.length-k;i++){
+        	  str+=numberArray[i];
+          }
+        	  System.out.println(Integer.parseInt(str));
+          }else{
+        	  System.out.println("invalid enter the correct details");
+          }
 		}
-		int sum=0;
-		int sum1=0;
-		for(i=0;i<n;i++){
-			if(i>=n1){
-				sum1=sum1+a[i];
+			catch(Exception exception){
+        	  System.out.println(exception);
+        	  s.close();
 			}
-			else if(i<n1){
-				sum1=sum1+a[i];
-			}
-			System.out.println(sum);
-			System.out.println(sum1);
-		}
-		if((sum1/n1)==(sum/(n-n1))){
-				System.out.println("possible");
-				
-			}
-			else{
-				System.out.println("Impossible");
-				s.close();
-			}
-		}
 	}
+}
+        	  
+          
+		
+	
 
+
+          
 
