@@ -1,22 +1,22 @@
-package guvi;
+package gvi;
 
 public class Pro4 {
-	public static void main(String args[]) {
-        int size = 2;     
-        generateTable(0, size, new int[size]);
-    }
+	 public static void main(String[] args) {
+	      int nDisks = 3;
+	      doTowers(nDisks, 'A', 'B', 'C');
+	   }
+	   public static void doTowers(int topN, char from,
+	   char inter, char to) {
+	      if (topN == 1){
+	         System.out.println("Disk 1 from "
+	         + from + " to " + to);
+	      }else {
+	         doTowers(topN - 1, from, to, inter);
+	         System.out.println("Disk "
+	         + topN + " from " + from + " to " + to);
+	         doTowers(topN - 1, inter, from, to);
+	      }
+	   }
+	}
 
-    private static void generateTable(int index, int size, int[] current) {
-        if (index == size) {
-            for (int i = 0; i < size; i++) {
-                System.out.print(current[i] + " ");
-            }
-            System.out.println();
-        } else {
-            for (int i = 0; i < 2; i++) {
-                current[index] = i;
-                generateTable(index + 1, size, current);
-            }
-        }
-}
-}
+
